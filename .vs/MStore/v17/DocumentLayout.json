@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\i7\\Desktop\\DAJAM\u0027S\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D331A7BB-F7A8-4534-BF68-C6E21147814C}|WindowsApp\\MStore.csproj|c:\\users\\i7\\desktop\\dajam\u0027s\\windowsapp\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D331A7BB-F7A8-4534-BF68-C6E21147814C}|WindowsApp\\MStore.csproj|solutionrelative:windowsapp\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D331A7BB-F7A8-4534-BF68-C6E21147814C}|WindowsApp\\MStore.csproj|C:\\Users\\i7\\Desktop\\DAJAM\u0027S\\windowsapp\\forms\\productform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D331A7BB-F7A8-4534-BF68-C6E21147814C}|WindowsApp\\MStore.csproj|solutionrelative:windowsapp\\forms\\productform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D331A7BB-F7A8-4534-BF68-C6E21147814C}|WindowsApp\\MStore.csproj|C:\\Users\\i7\\Desktop\\DAJAM\u0027S\\windowsapp\\forms\\productform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D331A7BB-F7A8-4534-BF68-C6E21147814C}|WindowsApp\\MStore.csproj|solutionrelative:windowsapp\\forms\\productform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D331A7BB-F7A8-4534-BF68-C6E21147814C}|WindowsApp\\MStore.csproj|C:\\Users\\i7\\Desktop\\DAJAM\u0027S\\windowsapp\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D331A7BB-F7A8-4534-BF68-C6E21147814C}|WindowsApp\\MStore.csproj|solutionrelative:windowsapp\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D331A7BB-F7A8-4534-BF68-C6E21147814C}|WindowsApp\\MStore.csproj|C:\\Users\\i7\\Desktop\\DAJAM\u0027S\\windowsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D331A7BB-F7A8-4534-BF68-C6E21147814C}|WindowsApp\\MStore.csproj|solutionrelative:windowsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\i7\\Desktop\\DAJAM\u0027S\\WindowsApp\\FORMS\\ProductForm.Designer.cs",
+              "RelativeDocumentMoniker": "WindowsApp\\FORMS\\ProductForm.Designer.cs",
+              "ToolTip": "C:\\Users\\i7\\Desktop\\DAJAM\u0027S\\WindowsApp\\FORMS\\ProductForm.Designer.cs",
+              "RelativeToolTip": "WindowsApp\\FORMS\\ProductForm.Designer.cs",
+              "ViewState": "AQIAAHkAAAAAAAAAAADgv4sAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T11:13:35.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductForm.cs",
+              "DocumentMoniker": "C:\\Users\\i7\\Desktop\\DAJAM\u0027S\\WindowsApp\\FORMS\\ProductForm.cs",
+              "RelativeDocumentMoniker": "WindowsApp\\FORMS\\ProductForm.cs",
+              "ToolTip": "C:\\Users\\i7\\Desktop\\DAJAM\u0027S\\WindowsApp\\FORMS\\ProductForm.cs",
+              "RelativeToolTip": "WindowsApp\\FORMS\\ProductForm.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAADgvxQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T11:13:24.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\i7\\Desktop\\DAJAM\u0027S\\WindowsApp\\Program.cs",
+              "RelativeDocumentMoniker": "WindowsApp\\Program.cs",
+              "ToolTip": "C:\\Users\\i7\\Desktop\\DAJAM\u0027S\\WindowsApp\\Program.cs",
+              "RelativeToolTip": "WindowsApp\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T10:15:42.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\i7\\Desktop\\DAJAM\u0027S\\WindowsApp\\FORMS\\LoginForm.cs",
+              "RelativeDocumentMoniker": "WindowsApp\\FORMS\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\i7\\Desktop\\DAJAM\u0027S\\WindowsApp\\FORMS\\LoginForm.cs",
+              "RelativeToolTip": "WindowsApp\\FORMS\\LoginForm.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T10:12:33.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\i7\\Desktop\\DAJAM\u0027S\\WindowsApp\\FORMS\\LoginForm.cs",
+              "RelativeDocumentMoniker": "WindowsApp\\FORMS\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\i7\\Desktop\\DAJAM\u0027S\\WindowsApp\\FORMS\\LoginForm.cs [Design]",
+              "RelativeToolTip": "WindowsApp\\FORMS\\LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T10:11:31.608Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
