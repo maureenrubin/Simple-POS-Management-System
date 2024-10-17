@@ -14,34 +14,53 @@ namespace WindowsApp.DB
 
 
         //Authentication Method
-        public bool Verification(string username, string password)
+        public bool LoginAccess(string username, string password, out string role)
         {
+            role = string.Empty;
+            
             try
             {
                 bool isAuthenticated = false;
 
                 
-
-                //creating a new connection named = "conn" together with the connection string method to connect in our sql
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    //opens the "conn" to connect in our sql
+                   
                     conn.Open();
 
 
-                    string query = "SELECT role FROM tb_Accounts WHERE username = @username AND password = password AND IsActive = 1";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                  
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@password", password);
+                    string queryAdmin = "SELECT role FROM AdminAccount WHERE username = @username AND password = @password AND IsActive = 1";
+                    
+                    SqlCommand cmdAdmin = new SqlCommand(queryAdmin, conn);
+                    cmdAdmin.Parameters.AddWithValue("@username", username);
+                    cmdAdmin.Parameters.AddWithValue("@password", password);
 
-                    object result = cmd.ExecuteScalar();
+                    object resultAdmin = cmdAdmin.ExecuteScalar();
                    
-                    if(result != null)
+                    if(resultAdmin != null)
                     {
+                        role = resultAdmin.ToString();
                         isAuthenticated = true;
                     }
-                } return isAuthenticated;
+                    else
+                    {
+                        string queryStaff = "SELECT 'Cashier' AS role FROM Staff WHERE username = @username AND password = @password";
+
+                        SqlCommand cmdStaff = new SqlCommand(queryStaff, conn);
+                        cmdStaff.Parameters.AddWithValue("@username", username);
+                        cmdStaff.Parameters.AddWithValue("@password", password);
+
+                        object resultStaff = cmdStaff.ExecuteScalar();
+
+                        if (resultStaff != null)
+                        {
+                            role = "Cashier";
+                            isAuthenticated = true;
+                        }
+                    }
+                }
+                
+                return isAuthenticated;
             }
             catch (Exception ex)
             {
@@ -50,27 +69,111 @@ namespace WindowsApp.DB
             }
         }
 
-        public string GetUserRole(string username)
+
+        public bool RequestPasswordReset(string username)
         {
-            string role = string.Empty;
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                string query = "SELECT role FROM tb_Accounts WHERE username = @username";
-                SqlCommand cmd = new SqlCommand(query, connection);
-
-                cmd.Parameters.AddWithValue("@username", username);
-
-                connection.Open();
-                object result = cmd.ExecuteScalar();
-
-                if (result != null)
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    role = result.ToString();
+                    conn.Open();
+
+                    string resetToken = Guid.NewGuid().ToString();
+                    DateTime resetExpiry = DateTime.Now.AddHours(24);
+
+                    // Check if the username exists in AdminAccount
+                    string queryCheckAdmin = "SELECT COUNT(1) FROM AdminAccount WHERE username = @username";
+                    SqlCommand cmdCheckAdmin = new SqlCommand(queryCheckAdmin, conn);
+                    cmdCheckAdmin.Parameters.AddWithValue("@username", username);
+
+                    int isAdmin = Convert.ToInt32(cmdCheckAdmin.ExecuteScalar());
+                    if (isAdmin > 0)
+                    {
+                        // Update reset token and expiry in AdminAccount
+                        string query = "UPDATE AdminAccount SET ResetToken = @ResetToken, ResetTokenExpiry = @ResetExpiry WHERE username = @username";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@ResetToken", resetToken);
+                        cmd.Parameters.AddWithValue("@ResetExpiry", resetExpiry);
+                        cmd.Parameters.AddWithValue("@username", username);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
                 }
             }
-            return role;
-        } 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+
+
+        // Method to Validate Reset Token
+        public bool ValidateResetToken(string username, string resetToken)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string queryAdmin = "SELECT COUNT(1) FROM AdminAccount WHERE username = @username AND ResetToken = @ResetToken AND ResetTokenExpiry > @CurrentDate";
+                    SqlCommand cmdAdmin = new SqlCommand(queryAdmin, conn);
+                    cmdAdmin.Parameters.AddWithValue("@username", username);
+                    cmdAdmin.Parameters.AddWithValue("@ResetToken", resetToken);
+                    cmdAdmin.Parameters.AddWithValue("@CurrentDate", DateTime.Now);
+
+                    int isTokenValid = Convert.ToInt32(cmdAdmin.ExecuteScalar());
+                    return isTokenValid > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+
+        public bool ResetPassword(string username, string newPassword, string resetToken)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // Validate the reset token before proceeding
+                    if (!ValidateResetToken(username, resetToken))
+                    {
+                        MessageBox.Show("Invalid or expired reset token.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+
+                    // Update the password and clear the reset token in AdminAccount
+                    string query = "UPDATE AdminAccount SET password = @NewPassword, ResetToken = NULL, ResetTokenExpiry = NULL WHERE username = @username";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@NewPassword", newPassword);
+                    cmd.Parameters.AddWithValue("@username", username);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+    
 
        
     }

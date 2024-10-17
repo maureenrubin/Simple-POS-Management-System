@@ -75,6 +75,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -92,80 +93,80 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeDB.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\EDITemployeeForm.cs">
+    <Compile Include="FORMS\CASHIER\CASHIERFirstForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\EDITemployeeForm.Designer.cs">
+    <Compile Include="FORMS\CASHIER\CASHIERFirstForm.Designer.cs">
+      <DependentUpon>CASHIERFirstForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\ADMIN\EDITemployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\ADMIN\EDITemployeeForm.Designer.cs">
       <DependentUpon>EDITemployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\HomeDash.cs">
+    <Compile Include="FORMS\ADMIN\ADMINDash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\HomeDash.Designer.cs">
-      <DependentUpon>HomeDash.cs</DependentUpon>
+    <Compile Include="FORMS\ADMIN\ADMINDash.Designer.cs">
+      <DependentUpon>ADMINDash.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\PaymentForm.cs">
+    <Compile Include="FORMS\ADMIN\PaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\PaymentForm.Designer.cs">
+    <Compile Include="FORMS\ADMIN\PaymentForm.Designer.cs">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\EDITproductsForm.cs">
+    <Compile Include="FORMS\ADMIN\EDITproductsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\EDITproductsForm.Designer.cs">
+    <Compile Include="FORMS\ADMIN\EDITproductsForm.Designer.cs">
       <DependentUpon>EDITproductsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DATA ACCESS\ProductDBContext.cs" />
     <Compile Include="DATA ACCESS\LoginDBContext.cs" />
-    <Compile Include="DATA ACCESS\PurchaseDBContext.cs" />
+    <Compile Include="DATA ACCESS\Purchase&amp;ShoppingDB.cs" />
     <Compile Include="HANDLER\PurchaseHandler.cs" />
-    <Compile Include="FORMS\AboutForm.cs">
+    <Compile Include="FORMS\ADMIN\ADMINFirstForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\AboutForm.Designer.cs">
-      <DependentUpon>AboutForm.cs</DependentUpon>
+    <Compile Include="FORMS\ADMIN\ADMINFirstForm.Designer.cs">
+      <DependentUpon>ADMINFirstForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\FirstForm.cs">
+    <Compile Include="FORMS\ADMIN\EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\FirstForm.Designer.cs">
-      <DependentUpon>FirstForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FORMS\EmployeeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FORMS\EmployeeForm.Designer.cs">
+    <Compile Include="FORMS\ADMIN\EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\LoginForm.cs">
+    <Compile Include="FORMS\LOGIN&amp;REGISTER\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\LoginForm.Designer.cs">
+    <Compile Include="FORMS\LOGIN&amp;REGISTER\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\MainForm.cs">
+    <Compile Include="FORMS\ADMIN\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\MainForm.Designer.cs">
+    <Compile Include="FORMS\ADMIN\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Productform.cs">
+    <Compile Include="FORMS\ADMIN\Productform.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Productform.Designer.cs">
+    <Compile Include="FORMS\ADMIN\Productform.Designer.cs">
       <DependentUpon>Productform.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\RegisterForm.cs">
+    <Compile Include="FORMS\LOGIN&amp;REGISTER\ForgotPassForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\RegisterForm.Designer.cs">
-      <DependentUpon>RegisterForm.cs</DependentUpon>
+    <Compile Include="FORMS\LOGIN&amp;REGISTER\ForgotPassForm.Designer.cs">
+      <DependentUpon>ForgotPassForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\TransactionForm.cs">
+    <Compile Include="FORMS\ADMIN\TransactionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\TransactionForm.Designer.cs">
+    <Compile Include="FORMS\ADMIN\TransactionForm.Designer.cs">
       <DependentUpon>TransactionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MODEL\AdminModel.cs" />
@@ -181,10 +182,10 @@
     <Compile Include="PRINT\PrintReceiptForm.Designer.cs">
       <DependentUpon>PrintReceiptForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductUserControl.cs">
+    <Compile Include="USERCONTROL\ProductUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ProductUserControl.Designer.cs">
+    <Compile Include="USERCONTROL\ProductUserControl.Designer.cs">
       <DependentUpon>ProductUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -196,46 +197,54 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FORMS\EDITemployeeForm.resx">
+    <Compile Include="Staff.cs">
+      <DependentUpon>Staff.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Staff.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Staff.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FORMS\CASHIER\CASHIERFirstForm.resx">
+      <DependentUpon>CASHIERFirstForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\ADMIN\EDITemployeeForm.resx">
       <DependentUpon>EDITemployeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\HomeDash.resx">
-      <DependentUpon>HomeDash.cs</DependentUpon>
+    <EmbeddedResource Include="FORMS\ADMIN\ADMINDash.resx">
+      <DependentUpon>ADMINDash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\PaymentForm.resx">
+    <EmbeddedResource Include="FORMS\ADMIN\PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\EDITproductsForm.resx">
+    <EmbeddedResource Include="FORMS\ADMIN\EDITproductsForm.resx">
       <DependentUpon>EDITproductsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\AboutForm.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
+    <EmbeddedResource Include="FORMS\ADMIN\ADMINFirstForm.resx">
+      <DependentUpon>ADMINFirstForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\FirstForm.resx">
-      <DependentUpon>FirstForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\EmployeeForm.resx">
+    <EmbeddedResource Include="FORMS\ADMIN\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\LoginForm.resx">
+    <EmbeddedResource Include="FORMS\LOGIN&amp;REGISTER\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\MainForm.resx">
+    <EmbeddedResource Include="FORMS\ADMIN\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Productform.resx">
+    <EmbeddedResource Include="FORMS\ADMIN\Productform.resx">
       <DependentUpon>Productform.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\RegisterForm.resx">
-      <DependentUpon>RegisterForm.cs</DependentUpon>
+    <EmbeddedResource Include="FORMS\LOGIN&amp;REGISTER\ForgotPassForm.resx">
+      <DependentUpon>ForgotPassForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\TransactionForm.resx">
+    <EmbeddedResource Include="FORMS\ADMIN\TransactionForm.resx">
       <DependentUpon>TransactionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRINT\PrintReceiptForm.resx">
       <DependentUpon>PrintReceiptForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductUserControl.resx">
+    <EmbeddedResource Include="USERCONTROL\ProductUserControl.resx">
       <DependentUpon>ProductUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -285,6 +294,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Staff.xsc">
+      <DependentUpon>Staff.xsd</DependentUpon>
+    </None>
+    <None Include="Staff.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Staff.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Staff.xss">
+      <DependentUpon>Staff.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -313,5 +333,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

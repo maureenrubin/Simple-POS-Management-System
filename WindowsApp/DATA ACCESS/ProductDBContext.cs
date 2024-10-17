@@ -13,7 +13,8 @@ namespace WindowsApp.DATA_ACCESS
     {
         
         private string connectionString = @"Data Source=DJOKERZ\SQLEXPRESS;Initial Catalog=NewApp;Integrated Security=True";
-        // It returns a List<ProductModel>, which is a collection of ProductModel objects.
+       
+
         public List<ProductModel> GetProducts()
         {
             List<ProductModel> products = new List<ProductModel>();
@@ -85,7 +86,7 @@ namespace WindowsApp.DATA_ACCESS
 
                     using (SqlCommand comd = new SqlCommand
                         ("UPDATE Products " + "SET ProductName = @ProductName, ProductPrice = @ProductPrice, ProductImage = @ProductImage " +
-                         "WHERE ProductID = @ProductID", connection))
+                        "WHERE ProductID = @ProductID", connection))
                     {
                         comd.Parameters.AddWithValue("@ProductID", product.ProductID);
                         comd.Parameters.AddWithValue("@ProductName", product.ProductName);
